@@ -1,0 +1,17 @@
+{% load static %}
+
+{% block content %}
+<div style="max-width: 500px; margin: 50px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 0px 8px rgba(0,0,0,0.1);">
+    <h2>Consulta de Endereço pelo CEP</h2>
+    
+    <form method="get" action="{% url 'consulta_cep' %}">
+        {% csrf_token %}
+        <div style="margin-bottom: 15px;">
+            <label for="cep">Digite o CEP:</label>
+            <input type="text" name="cep" id="cep" class="form-control" placeholder="Ex: 01001-000" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Consultar</button>
+    </form>
+</div>
+{% endblock %}
